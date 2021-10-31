@@ -1,15 +1,16 @@
 public class Basket {
 
-    private static int count = 0;
-    private String items = "";
-    private int totalPrice = 0;
-    private int limit;
-    private double totalWeight = 0;
+    private static int count = 0; // переменная count для определения колличества одноименных товаров в корзине
+    private String items = ""; // переменная items для добавления товров в корзину
+    private int totalPrice = 0; // переменная totalPrice стоимости
+    private int limit; // переменная limit для установки лимита корзины
+    private double totalWeight = 0; // переменная totalWeight для подсчета итогового подсчета веса для развесных товаров
 
-    public Basket() {
+    public Basket() { // конструктор 1,
         increaseCount(1);
-        items = "Список товаров:";
+        items = "Список товаров:"; // при выполнении вывода
         this.limit = 1000000;
+
     }
 
     public Basket(int limit) {
@@ -36,11 +37,11 @@ public class Basket {
         add(name, price, 1);
     }
 
-    public void add(String name, int price, int count, double weight) {
-        add(name, price, 1, weight);
+    public void add(String name, int price, int count) {
+        add(name, price, 1, 0.0);
     }
 
-    public void add(String name, int price, int count) {
+    public void add(String name, int price, int count, double weight) {
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -56,9 +57,9 @@ public class Basket {
         }
 
         items = items + "\n" + name + " - " +
-            count + " шт. - " + price + weight;
+            count + " шт., Стоимость - " + price + " руб., вес - " + weight;
         totalPrice = totalPrice + count * price;
-
+        totalWeight = totalWeight + weight * count;
     }
 
     public void clear() {
