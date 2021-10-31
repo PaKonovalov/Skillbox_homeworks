@@ -10,7 +10,6 @@ public class Basket {
         increaseCount(1);
         items = "Список товаров:"; // при выполнении вывода
         this.limit = 1000000;
-
     }
 
     public Basket(int limit) {
@@ -38,7 +37,7 @@ public class Basket {
     }
 
     public void add(String name, int price, int count) {
-        add(name, price, 1, 0.0);
+        add(name, price, 1, 0);
     }
 
     public void add(String name, int price, int count, double weight) {
@@ -57,10 +56,10 @@ public class Basket {
         }
 
         items = items + "\n" + name + " - " +
-            count + " шт., Стоимость - " + price + " руб., вес - " + weight;
+                count + " шт., стоимость - " + price + " руб., вес - " + weight;
         totalPrice = totalPrice + count * price;
         totalWeight = totalWeight + weight * count;
-    }
+        }
 
     public void clear() {
         items = "";
@@ -87,5 +86,6 @@ public class Basket {
         } else {
             System.out.println(items);
         }
+        System.out.println("Общий вес весовых товаров: " + getTotalWeight() + " кг.");
     }
 }
