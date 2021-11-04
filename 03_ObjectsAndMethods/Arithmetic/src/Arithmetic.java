@@ -1,17 +1,56 @@
-class Arithmetic {
-    int numOne;
-    int numTwo;
+/* Примечание. Класс создает новый тип данных,
+который можно использовать для создания объектов. Это означает, что класс
+создает логический каркас, определяющий взаимосвязь между его членами. При
+объявлении объекта класса создается экземпляр этого класса. Таким образом,
+класс - это логическая конструкция, а объект имеет физическую сущность, т.е. он
+занимает конкретную область оперативной памяти.*/
+class Arithmetic { // создаем класс "Arithmetic" (с переменными экземплярами int стр. 4,5)
+    // (определяем новый тип данных, при этом новый тип данных называется "Arithmetic"
+    // и оно будет использоваться для оределениия объектов типа "Arithmetic")
+    int numOne; // объявление переменной экземпляра int numOne
+    int numTwo; // объявление переменной экземпляра int numTwo
 
-    public Arithmetic(int numOne, int numTwo) {
-        this.numOne = numOne;
+    Arithmetic (int numOne, int numTwo){ // метод, который принимает размеры в виде своих параметров
+        this.numOne = numOne; /*Иногда требуется, чтобы метод ссылался на вызвавший его объект. Для этой
+        цели в Java определено ключевое слово this. Им можно пользоваться в теле любого
+        метода для ссылки на текущий объект. Это означает, что ключевое слово this
+        всегда служит ссылкой на объект, для которого был вызван метод. Ключевое слово
+        this можно использовать везде, где допускается ссылка на объект типа текущего
+        класса.*/
         this.numTwo = numTwo;
-
-        System.out.println("Сумма чисел равна: " + (numOne + numTwo));
-        System.out.println("Произведение чисел ранвно: " + (numOne * numTwo));
-        System.out.println("Максимальное из двух чисел: " + (Math.max(numOne, numTwo)));
-        System.out.println("Минимальное из двух чисел: " + (Math.min(numOne, numTwo)));
     }
-        public static void main(String[] args) {
-        Arithmetic arithmetic = new Arithmetic(47, 35);
-        }
+
+    /* создаем метод "void sumResult()" для расчета суммы. Вызов метода происходит в строчках 29, 30 (data1.sumResult(),
+            data2.sumResult()) для данных указанных в строках 22-29.
+            */
+    int sumResult() {
+        return (numOne + numTwo);
+    }
+
+    int multiplyResult() {
+        return (numOne * numTwo);
+    }
+    int maxResult(){
+        return Math.max(numOne, numTwo);
+    }
+    int minResult(){
+        return Math.min(numOne, numTwo);
+    }
+}
+class Data {
+    public static void main(String[] args) {
+        Arithmetic data1 = new Arithmetic(47,35); // создаем объект "arithmetic" класса "Arithmetic".
+        // После создания "arithmetic" становится экзепляром класса "Arithmetic".
+        // Имя класса, за которым следуют круглые скобки, обозначает конструктор данного класса.
+        //data1.numOne = 47; // значение (numOne - это параметр, 47 - это Аргумент) присваемые переменной numOne
+        //data1.numTwo = 35; // значение присваемые переменной numTwo
+        Arithmetic data2 = new Arithmetic(40,5); // создаем объект "arithmetic" класса "Arithmetic" как и строке 23 и присваеваем значения как и с
+        //data2.numOne = 40; // присваеваем значения как и в стр 26
+        //data2.numTwo = 5; // присваеваем значения как и в стр 27
+
+        System.out.println("Сумма чисел ранвна: " + data1.sumResult()); // описание указанно в строке 14-15
+        System.out.println("Произведение чисел ранвно: " + data2.multiplyResult());
+        System.out.println("Максимальное из двух чисел: " + data1.maxResult());
+        System.out.println("Минимальное из двух чисел: " + data2.minResult());
+    }
 }
