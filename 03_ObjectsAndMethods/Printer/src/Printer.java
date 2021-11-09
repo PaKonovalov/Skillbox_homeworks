@@ -14,35 +14,38 @@ public class Printer {
     }
 
    public void append(String documentName, int pageCount, String textOfTheDocument) {
-        if (textOfTheDocument.isEmpty()) {
-            queue = queue + "Имя документа: " + documentName + ", количество страниц: " + pageCount + "\n";
-        } else {
-            queue = queue + "Имя документа: " + documentName + ", количество страниц: " + pageCount + " Текст:  " + textOfTheDocument + "\n";
-        }
-        pendingPages += pageCount;
-        pageHistory += pendingPages;
+       if (textOfTheDocument.isEmpty()) {
+           queue = queue + "Имя документа: " + documentName + ", количество страниц: " + pageCount + "\n";
+       } else {
+           queue = queue + "Имя документа: " + documentName + ", количество страниц: " + pageCount + " Текст:  " + textOfTheDocument + "\n";
+       }
+       pendingPages += pageCount;
+   }
+
+    public int getPrintPageHistory() {
+        return  pageHistory;
     }
 
-   public int getPendingPagesCount() {
-        return  pendingPages;
-    }
-   public int getPrintPageHistory() {
-       return pageHistory ;
+    public int getPendingPagesCount() {
+       return  pendingPages;
     }
 
    public void clear() {
-        queue = "";
+      queue = "";
+      pendingPages = 0;
     }
 
    public void print(String title) {
         System.out.println(title);
         if (queue.isEmpty()) {
+            System.out.println("Проверка очереди: " + getPendingPagesCount() + " стр.");
             System.out.println("Нет документов на печать");
-            System.out.println("Общее количество распечатанных страниц: " + getPrintPageHistory());
+            System.out.println("Общее количество распечатанных страниц за все время: " + getPrintPageHistory());
             } else {
             System.out.print(queue);
             System.out.println("Общее количество страниц в очереди: " + getPendingPagesCount());
-
+            pageHistory += getPendingPagesCount();
         }
+
     }
 }
