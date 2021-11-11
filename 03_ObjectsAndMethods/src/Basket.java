@@ -63,8 +63,8 @@ public class Basket {
 
     public void clear() {
         items = "";
-        totalPrice = 0;
-        totalWeight = 0;
+        //totalPrice = 0;
+        //totalWeight = 0;
     }
 
     public int getTotalPrice() {
