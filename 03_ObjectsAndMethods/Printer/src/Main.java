@@ -5,8 +5,8 @@ public class Main {
         document.append("текст 2", 4);
         document.append("текст 3", 1, "Привет Серафим");
         document.append("текст 4",1);
+
         document.print("Очередь печати:");
-        document.clear();
         document.print("Очередь печати:");
     }
 }
