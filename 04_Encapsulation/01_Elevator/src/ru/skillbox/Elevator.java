@@ -2,43 +2,43 @@ package ru.skillbox;
 public class Elevator {
     private int currentFloor = 1, minFloor, maxFloor;
 
-    public Elevator(int minFloor, int maxFloor) { //Это конструктор для лимита этажей
+    public Elevator(int minFloor, int maxFloor) {
         this.minFloor = minFloor;
         this.maxFloor = maxFloor;
     }
 
-    public int getCurrentFloor() { // метод возвращающий значение того на каком этаже находится лифт
+    public int getCurrentFloor() {
         return currentFloor;
     }
 
     public void moveDown() {
-        currentFloor = currentFloor < minFloor ? currentFloor + 1 : currentFloor; // расчет перемещающий лифта на один этаж вниз,
-        // так же тут прописывам проверку возможности движения лифта на 1 этаж вниз
-        // используя тернанрные операторы
+        currentFloor = currentFloor < minFloor ? currentFloor - 1 : currentFloor;
+        System.out.println("Лифт на " + currentFloor-- + " этаже");
     }
 
     public void moveUp() {
-        currentFloor = currentFloor > maxFloor ? currentFloor - 1 : currentFloor; // расчет перемещающий лифта на один этаж вверх,
-        // так же тут прописывам проверку возможности движения лифта на 1 этаж ввверх
-        // используя тернанрные операторы
+        currentFloor = currentFloor > maxFloor ? currentFloor + 1 : currentFloor;
+        System.out.println("Лифт на " + currentFloor++ + " этаже");
+
     }
 
-    public void move(int floor) { // тут код для движения лифта, с проверкой этажности и вывода результата в консоль
+    public void move(int floor) {
+        if (currentFloor == floor) {
+        }
+
         if (floor > maxFloor || floor < minFloor) {
             System.out.println("Неверный этаж");
             return;
-        } else {
-            }
+        }
 
-        for (; getCurrentFloor() < floor; currentFloor++) {
+        while (getCurrentFloor() != floor) {
+            if (currentFloor < floor) {
                 moveUp();
-                System.out.println("Лифт на " + currentFloor + " этаже");
-        }
-
-        while (floor <= currentFloor) {
+            } else {
                 moveDown();
-                System.out.println("Лифт на " + currentFloor-- + " этаже");
+            }
         }
+        System.out.println("Лифт на " + currentFloor + " этаже");
     }
 }
 
