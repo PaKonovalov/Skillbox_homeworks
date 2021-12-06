@@ -5,13 +5,15 @@ public class CargoData {
     private final String thisSideUp;
     private final String registrationNumber;
     private final String fragile;
+    private  Dimensions dimensions;
 
-    public CargoData(double weight, String deliveryAddress, String thisSideUp, String registrationNumber, String fragile) {
+    public CargoData(double weight, String deliveryAddress, String thisSideUp, String registrationNumber, String fragile, Dimensions dimensions) {
         this.weight = weight;
         this.deliveryAddress = deliveryAddress;
         this.thisSideUp = thisSideUp;
         this.registrationNumber = registrationNumber;
         this.fragile = fragile;
+        this.dimensions = dimensions;
     }
 
     public CargoData() {
@@ -27,7 +29,7 @@ public class CargoData {
     }
 
     public CargoData setWeight(double weight) {
-       return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile);
+        return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile, dimensions);
     }
 
     public String getDeliveryAddress() {
@@ -35,7 +37,7 @@ public class CargoData {
     }
 
     public CargoData setDeliveryAddress(String deliveryAddress) {
-        return new CargoData (weight, deliveryAddress, thisSideUp, registrationNumber, fragile);
+        return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile, dimensions);
     }
 
     public String getThisSideUp() {
@@ -43,7 +45,7 @@ public class CargoData {
     }
 
     public CargoData setThisSideUp(String thisSideUp) {
-        return new CargoData (weight, deliveryAddress, thisSideUp, registrationNumber, fragile);
+        return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile, dimensions);
     }
 
     public String getRegistrationNumber() {
@@ -51,7 +53,7 @@ public class CargoData {
     }
 
     public CargoData setRegistrationNumber(String registrationNumber) {
-        return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile);
+        return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile, dimensions);
     }
 
     public String getFragile() {
@@ -59,7 +61,11 @@ public class CargoData {
     }
 
     public CargoData setFragile(String fragile) {
-        return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile);
+        return new CargoData(weight, deliveryAddress, thisSideUp, registrationNumber, fragile, dimensions);
+    }
+
+    public Dimensions getDimensions() {
+        return dimensions;
     }
 
     public String toString() {

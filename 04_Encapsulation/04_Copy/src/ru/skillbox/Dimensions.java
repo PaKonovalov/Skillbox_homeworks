@@ -10,7 +10,6 @@ public class Dimensions {
         this.height = height;
         this.length = length;
     }
-
     public Dimensions() {
         width = 0;
         height = 0;
@@ -43,7 +42,7 @@ public class Dimensions {
 
     public double getCargoVolume() {
         double cargoVolume;
-        return cargoVolume = getHeight() + getLength() + getHeight();
+        return cargoVolume = getHeight() * getLength() * getHeight();
     }
 
     public String toString() {
