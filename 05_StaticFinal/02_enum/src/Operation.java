@@ -1,3 +1,4 @@
-public enum Operation implements jdk.dynalink.Operation {
-    ADD, SUBTRACT, MULTIPLY;
+public enum Operation  {
+    ADD, SUBTRACT, MULTIPLY
 }
+
