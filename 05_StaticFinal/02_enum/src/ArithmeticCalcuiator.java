@@ -14,6 +14,7 @@ class ArithmeticCalculator {
     }
 
     public int calculate() {
+        /// TODO: 19.02.2022 реализовать возможность возврата значений используя лямбда 
 //        return switch (type) {
 //            case MULTIPLY -> x * y;
 //            case ADD -> x + y;
