@@ -12,24 +12,24 @@ class ArithmeticCalculator {
     public int getCalculate() {
         return calculate();
     }
-
+// При создании проекта необходимо следить за версией JDK ранее не работало с лямбда т.к. была неверная версия.
     public int calculate() {
-        /// TODO: 19.02.2022 реализовать возможность возврата значений используя лямбда 
-//        return switch (type) {
-//            case MULTIPLY -> x * y;
-//            case ADD -> x + y;
-//            case SUBTRACT -> x - y;
-//        };
+        return switch (type) {
+            case MULTIPLY -> x * y;
+            case ADD -> x + y;
+            case SUBTRACT -> x - y;
+        };
 
-        if (type == Operation.MULTIPLY) {
-            return x * y;
-        }
-        if (type == Operation.ADD) {
-            return x + y;
-        }
-        if (type == Operation.SUBTRACT) {
-            return x - y;
-        }
-        return 0;
+//        Через if
+//        if (type == Operation.MULTIPLY) {
+//            return x * y;
+//        }
+//        if (type == Operation.ADD) {
+//            return x + y;
+//        }
+//        if (type == Operation.SUBTRACT) {
+//            return x - y;
+//        }
+//        return 0;
     }
 }
