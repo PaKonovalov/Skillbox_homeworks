@@ -5,7 +5,7 @@ public class CargoData {
     private final String thisSideUp;
     private final String registrationNumber;
     private final String fragile;
-    private  Dimensions dimensions;
+    private Dimensions dimensions;
 
     public CargoData(double weight, String deliveryAddress, String thisSideUp, String registrationNumber, String fragile, Dimensions dimensions) {
         this.weight = weight;

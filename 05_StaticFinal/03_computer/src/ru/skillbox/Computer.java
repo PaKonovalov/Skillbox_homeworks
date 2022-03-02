@@ -21,7 +21,7 @@ public class Computer {
         this.memoryDevice = memoryDevice;
         this.display = display;
         this.keyboard = keyboard;
-        this.totalWeight = totalWeight;
+
     }
 
     public String getVendor() {
