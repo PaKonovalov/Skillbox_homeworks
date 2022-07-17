@@ -1,0 +1,14 @@
+LocalDate today = LocalDate.now();
+        LocalDate birthday = LocalDate.of(year, month, day);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(" - dd.MM.yyyy - E").localizedBy(Locale.ENGLISH);
+        int i = 0;
+        String line = "";
+
+        while (date.isBefore(today) || date.isEqual(today)){
+            line += i + birthday.format(formatter) + System.LineSeparator();
+            i++;
+            birthday = birthday.plusYears(1);
+        }
+        return line;
+    }
+}
